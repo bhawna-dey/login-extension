@@ -1,5 +1,5 @@
 const APP_ID = encodeURIComponent(
-"719682789034870");
+"xxxx");
 const RESPONSE_TYPE = encodeURIComponent("token");
 const REDIRECT_URI = encodeURIComponent(
 "https://obcapionccamihlpichmndkilpjbdgkc.chromiumapp.org");
