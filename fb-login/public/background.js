@@ -1,10 +1,8 @@
-const CLIENT_ID = encodeURIComponent(
-  "290601369459-19et5v76677pj4jlg3ro9t40aul5h0qk.apps.googleusercontent.com"
-);
-const RESPONSE_TYPE = encodeURIComponent("id_token");
+const APP_ID = encodeURIComponent(
+"719682789034870");
+const RESPONSE_TYPE = encodeURIComponent("token");
 const REDIRECT_URI = encodeURIComponent(
-  "https://meogjdillcioeplmngaeckmbbkpkkega.chromiumapp.org"
-);
+"https://obcapionccamihlpichmndkilpjbdgkc.chromiumapp.org");
 const SCOPE = encodeURIComponent("openid");
 const STATE = encodeURIComponent("dxchgv");
 const PROMPT = encodeURIComponent("consent");
@@ -21,8 +19,8 @@ function create_auth_endpoint() {
       Math.random().toString(36).substring(2, 15)
   );
 
-  let openId_endpoint_url = `https://accounts.google.com/o/oauth2/v2/auth
-?client_id=${CLIENT_ID}
+  let openId_endpoint_url = `https://www.facebook.com/dialog/oauth
+?app_id=${APP_ID}
 &response_type=${RESPONSE_TYPE}
 &redirect_uri=${REDIRECT_URI}
 &state=${STATE}
@@ -30,6 +28,7 @@ function create_auth_endpoint() {
 &prompt=${PROMPT}
 &nonce=${nonce}`;
 
+console.log(openId_endpoint_url);
   return openId_endpoint_url;
 }
 
@@ -44,7 +43,10 @@ chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
           interactive: true,
         },
         function (redirect_url) {
+          console.log(redirect_url);
           console.log("Login successful");
+          sendResponse("success");
+
           chrome.action.setPopup({ popup: "./popup-signed-in.html" }, () => {
             sendResponse("success");
             user_signed_in = true;
@@ -63,4 +65,3 @@ chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
     sendResponse(is_user_signed_in());
   }
 });
-

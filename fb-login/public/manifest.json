@@ -1,0 +1,22 @@
+{
+  "name": "Fb login test",
+  "description": "",
+  "version": "0.1.0",
+  "manifest_version": 3,
+  "icons": {
+      "16": "./logo16.png"
+  },
+  "action": {
+      "default_popup": "popup.html"
+  },
+  "permissions": [
+      "identity",
+      "scripting"
+  ],
+  "background":{
+      "service_worker":"./background.js"
+  },
+  "content_security_policy": {
+      "extension_pages":"script-src 'self'; object-src 'self';"
+  }
+}

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+        body{
+            width:300px;
+            height: auto;
+        }
+        div{
+            position:relative;
+            left: 50%;
+            transform: translateX(-50%);
+            width:50%;
+            height:25%;
+            padding:5px;
+            font-size: 2.5em;
+            background-color: white;
+            border-radius: 5px;
+            text-align: center;
+            color: white;
+            font-family: monospace;
+            font-weight: bold;
+            margin-bottom: 15px;
+            cursor: pointer;
+            transition-duration: 0.3s;
+        }
+    </style>
+</head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>Chrome Extension Twitter Oauth</title>
+    <script type="text/javascript" src="js/lib/jquery.min.js"></script>
+    <script type="text/javascript" src="js/lib/oAuth.js"></script>
+    <script type="text/javascript" src="js/lib/sha1.js"></script>
+    <script type="text/javascript" src="js/lib/twitter.js"></script>
+  </head>
+  <body>
+    <div id="content">
+      <input id="authenticate" type="button" value="Login" />
+    </div>
+    <script type="text/javascript" src="js/index.js"></script>
+  </body>
+</html>
