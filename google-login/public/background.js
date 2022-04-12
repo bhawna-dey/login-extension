@@ -1,5 +1,5 @@
 const CLIENT_ID = encodeURIComponent(
-  "290601369459-19et5v76677pj4jlg3ro9t40aul5h0qk.apps.googleusercontent.com"
+  "xxxxxx"
 );
 const RESPONSE_TYPE = encodeURIComponent("id_token");
 const REDIRECT_URI = encodeURIComponent(
